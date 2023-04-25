@@ -280,6 +280,7 @@ class _HomePageState extends State<HomePage> {
                 : BottomSheetButton(
                     label: "Edit Task",
                     onTap: () {
+                      Get.back();
                       Get.toNamed(RouteHelper.getAddEditTaskPage(
                           json.encode(task.toJson())));
                     },

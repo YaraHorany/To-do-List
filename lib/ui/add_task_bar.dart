@@ -266,7 +266,9 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
       int differenceInDays = pickerDate.difference(DateTime.now()).inDays;
       if (differenceInDays < 0) {
         _showSnackBar(
-            "Invalid date", "The chosen date must be no earlier than today.");
+            "Invalid date",
+            "The chosen date must be no earlier than today.",
+            AppColors.redColor);
       } else {
         setState(() {
           _selectedDate = pickerDate;
@@ -363,17 +365,21 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
       _addOrUpdateTask();
       Get.back();
     } else if (_titleController.text.isEmpty) {
-      _showSnackBar("Required", "Title cannot be empty.");
+      _showSnackBar("Required", "Title cannot be empty.", AppColors.redColor);
     }
   }
 
   _addOrUpdateTask() async {
     // Updating the task
     if (isUpdating) {
-      _updateTask();
+      await _updateTask();
+      _showSnackBar(
+          "Task Edited", "Task successfully edited.", AppColors.greenColor);
     } else {
       // Adding a new task to database
       await _addTaskToDb();
+      _showSnackBar(
+          "Task Saved", "Task successfully saved.", AppColors.greenColor);
     }
   }
 
@@ -421,16 +427,16 @@ class _AddEditTaskPageState extends State<AddEditTaskPage> {
     );
   }
 
-  _showSnackBar(String title, String message) {
+  _showSnackBar(String title, String message, Color color) {
     Get.snackbar(
       title,
       message,
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.white,
-      colorText: AppColors.redColor,
-      icon: const Icon(
+      colorText: color,
+      icon: Icon(
         Icons.warning_amber_rounded,
-        color: Colors.red,
+        color: color,
       ),
     );
   }
