@@ -34,7 +34,7 @@ Todo application made with:
 
 | Home Page | Activate Dark theme | Dark theme | Add task |
 | ------------- | ------------- | ------------- | ------------- |
-| <img src="screen-shots/home_page.png" width="200" height="400"> | <img src="screen-shots/Activate_dark_theme.png" width="200" height="400"> | <img src="screen-shots/dark_theme.png" width="200" height="400"> | <img src="screen-shots/add_task.png" width="200" height="400"> |
+| <img src="screen-shots/home_page.png" width="200" height="400"> | <img src="screen-shots/Activate_dark_ theme.png" width="200" height="400"> | <img src="screen-shots/dark_theme.png" width="200" height="400"> | <img src="screen-shots/add_task.png" width="200" height="400"> |
 
 | Edit/Delete/Completed | Edit task | Delete task | Previous tasks |
 | ------------- | ------------- | ------------- | ------------- |
